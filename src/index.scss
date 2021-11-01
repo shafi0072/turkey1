@@ -1,0 +1,744 @@
+/* Scss Document */
+@font-face {
+  font-family: Poppins-Bold;
+  src: url("../src/assets/font-family/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: Poppins-Light;
+  src: url("../src/assets/font-family/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: Poppins-Medium;
+  src: url("../src/assets/font-family/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("../src/assets/font-family/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url("../src/assets/font-family/Poppins-SemiBold.ttf");
+}
+
+$white: #fff;
+$black: #404748;
+$grey: #9D9D9D;
+$green:#7ECC3C;
+$blue:#7F8FA5;
+$extra-larger-desktop-width: 1400px;
+$larger-desktop-width: 1200px;
+$smaller-desktop-width: 1024px;
+$tablet-width: 992px;
+$mobile-width: 768px;
+$phone-width: 640px;
+$small-phone-width: 480px;
+
+/*Media Queries*/
+@mixin ex-desktop {
+  @media (max-width: #{$extra-larger-desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin ex-desktop-min {
+  @media (min-width: #{$extra-larger-desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (max-width: #{$larger-desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin desktop-min {
+  @media (min-width: #{$larger-desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin s-desktop {
+  @media (max-width: #{$smaller-desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin s-desktop-min {
+  @media (min-width: #{$smaller-desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: #{$mobile-width - 1px}) {
+    @content;
+  }
+}
+@mixin phone {
+  @media (max-width: #{$phone-width - 1px}) {
+    @content;
+  }
+}
+@mixin s-phone {
+  @media (max-width: #{$small-phone-width - 1px}) {
+    @content;
+  }
+}
+
+
+.font-57 {
+  font-size: 57px;
+}
+.font-45 {
+  font-size: 45px;
+}
+.font-17 {
+  font-size: 17px;
+}
+.font-25 {
+  font-size: 25px;
+}
+.font-23 {
+  font-size: 23px;
+}
+.font-17 {
+  font-size: 17px;
+}
+.font-16 {
+  font-size: 16px;
+}
+.font-34 {
+  font-size: 34px;
+}
+
+
+.white {
+  color: $white;
+}
+.white-bg {
+  background: $white;
+}
+.blue {
+  color: $blue;
+}
+.blue-bg {
+  background: $blue;
+}
+
+.black {
+  color: $black;
+}
+.black-bg {
+  background: $black;
+}
+
+.grey {
+  color: $grey;
+}
+.grey-bg {
+  background: $grey;
+}
+.green {
+  color: $green;
+}
+.green-bg {
+  background: $green;
+}
+
+.pad {
+  padding: 0px;
+}
+.mar {
+  margin: 0px;
+}
+
+.font-f-r {
+  font-family: Poppins-Regular;
+}
+.font-f-b {
+  font-family: Poppins-Bold;
+}
+.font-f-li {
+  font-family: Poppins-Light;
+}
+.font-f-m {
+  font-family: Poppins-Medium;
+}
+.font-f-sm {
+  font-family: Poppins-SemiBold;
+}
+
+body {
+  @extend .pad, .mar, .font-f-r;
+ 
+  .MuiTypography-h1 {
+    @extend .font-57, .white,.font-f-r,.mar ;
+    line-height: 80px;
+    @include ex-desktop{
+      font-size: 45px;
+      line-height: 40px
+
+    }
+    @include desktop{
+      font-size: 35px;
+      line-height: 40px
+    }
+  }
+  .MuiTypography-h2 {
+    @extend .font-45, .font-f-r,.white;
+    line-height: 65px;
+    @include ex-desktop{
+      font-size: 29px;
+      line-height: 47px
+    }
+    @include desktop{
+      font-size: 23px;
+      line-height: 41px
+    }
+    
+  }
+  .MuiTypography-h3 {
+    @extend .font-34, .white ,.font-f-r ;
+    line-height: 33px;
+    @include ex-desktop{
+      font-size: 17px ;
+      line-height: 25px;
+
+    }
+    
+  }
+  .MuiTypography-h4 {
+    @extend .font-25, .white ,.font-f-r ;
+    line-height: 40px
+  }
+  .MuiTypography-h5 {
+    @extend .font-23,  .black, .font-f-r;
+    
+  }
+  .MuiTypography-h6 {
+    @extend .font-17,  .black, .font-f-r;
+    line-height: 26px;
+    opacity: 0.5;
+  }
+
+ 
+}
+.greenbottom{
+  border-bottom: 3px solid $green;
+}
+//  button styles 
+.MuiButton-textPrimary{
+  @extend .green, .font-34, .font-f-m;
+  &:hover{
+    @extend .white;
+  }
+}
+.MuiButton-containedPrimary{
+  @extend .white, .font-25, .font-f-m,.green-bg;
+  padding: 15px 45px;
+  &:hover{
+    @extend .white,.green-bg;
+  }
+  @include ex-desktop{
+    font-size: 15px;
+  }
+}
+.MuiButton-textInherit{
+  @extend .white, .font-16, .font-f-li;
+  text-transform: capitalize;
+  border-left: 1px solid $white;
+  padding: 17px 35px;
+  border-radius: 0px;
+  &:hover{
+    @extend .green-bg;
+  }
+  @include ex-desktop{
+    padding: 22px 17px;
+  }
+}
+
+.MuiContainer-root{
+    max-width: 1240px
+}
+
+
+// home css
+.appbar-setting{
+  border-bottom: 1px solid $white;
+  box-shadow: none;
+  position: absolute;
+    top: 0;
+    background: transparent;
+    .shark-btn{
+      @extend .green-bg;
+    }
+  .MuiToolbar-root{
+    padding-left: 150px;
+    padding-right: 150px;
+    @include ex-desktop{
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    @include desktop{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  .appbarmargn{
+    margin-left: auto;
+  }
+  .menuicon{
+    @extend .white;
+  }
+}
+.paper-custom{
+  .MuiDrawer-paper{
+    background: rgba($color: #000000, $alpha: 0.4)
+  }
+  .MuiList-root{
+    padding-top: 14px;
+  }
+  .MuiListItemText-primary{
+    @extend .white;
+    font-size: 19px;
+    &:hover{
+      @extend .green;
+    }
+  }
+}
+.hero-section{
+  background-image: url("./assets/images/Rectangle\ 38.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1080px;
+  text-align: center;
+  .MuiTypography-h1{
+    padding-top: 355px;
+  }
+  .MuiTypography-h2{
+    padding-top: 30px;
+  }
+  .MuiButton-containedPrimary{
+margin-top: 70px;
+@include ex-desktop{
+  margin-top: 30px;
+}  
+}
+
+}
+.quisection{
+  .MuiTypography-h2{
+   @extend .black;
+  }
+.greenbottom{
+  border-bottom: 3px solid $green;
+  width: 150px;
+}
+.MuiTypography-h6{
+  margin-top: 30px;
+ }
+ .quimargn{
+   @include ex-desktop{
+     margin-top: 80px;
+     margin-bottom: 80px;
+   }
+   @include tablet{
+    margin-top: 40px;
+    margin-bottom: 40px;
+   }
+ }
+ img{
+   @include desktop{
+     margin-top: 40px;
+     margin-bottom: 40px;
+   }
+ }
+}
+.services{
+  text-align: center;
+  .MuiTypography-h2{
+    @extend .black;
+   }
+   .greenbottom{
+    border-bottom: 3px solid $green;
+    width: 150px;
+  }
+  .MuiTypography-h2{
+    margin-top: 40px;
+    margin-bottom: 40px;
+   }
+   .slick-prev {
+    left: -70px;
+    @include ex-desktop{
+      left: -20px;
+    }
+    @include mobile{
+      left: 0px; 
+    }
+}
+.MuiTypography-h3{
+  @extend .black;
+  font-size: 34px;
+  margin-bottom: 50px;
+  line-height: 38px;
+  @include tablet{
+    font-size: 25px;
+  }
+}
+.slick-next {
+  right: -70px;
+  @include ex-desktop{
+    right: -20px;
+  }
+  @include mobile{
+    right: 0px; 
+  }
+}
+.slick-dots li button:before {
+  font-size: 12px;
+}
+.slick-dots {
+  bottom: -50px;
+}
+.servicecard{
+  @include desktop{
+    max-width: 270px;
+  }
+}
+.impression-text{
+  @include tablet{
+    padding-top: 20px;
+  }
+ 
+}
+}
+.examples{
+  background-image: url("./assets/images/cropped-20180323_183047-2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1006px;
+  @include mobile{
+    height: 1500px;
+  }
+  .MuiTypography-h2{
+    padding-top: 120px;
+    @include tablet{
+      padding-top: 50px;
+    }
+    @include phone{
+      padding-top: 20px;
+    }
+  }
+  .greenbottom{
+    border-bottom: 3px solid $green;
+    width: 100px;
+  }
+  .MuiTypography-h5{
+@extend .white;
+text-transform: uppercase;
+margin-top: 40px;
+@include tablet{
+  margin-top: 0px;
+}
+  }
+  img{
+    margin-top: 40px;
+    @include tablet{
+      margin-top: 0px;
+    }
+  }
+  .MuiTypography-h6{
+    @extend .white,.font-f-li;
+    font-size: 16px;
+    opacity: 0.5;
+      }
+      .prsentation{
+        text-transform:lowercase;
+      }
+}
+.Pmesection{
+  .circle{
+    margin-top: 100px;
+    @include mobile{
+      margin-top: 50px;
+    }
+  }
+  .MuiTypography-h2{
+    @extend .black ;
+  }
+  .greenbottom{
+    border-bottom: 3px solid $green;
+  }
+  .MuiTypography-h5{
+    @extend .font-f-li;
+    opacity: 0.5;
+    font-size: 20px;
+    margin-top: 40px;
+    @include tablet{
+      margin-top: 0px;
+    }
+
+  }
+  .Remplacement{
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+  .pmg-setting{
+    @include desktop{
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    
+  }
+  .computer{
+    @include mobile{
+      width: 290px;
+      height: 290px;
+    }
+  }
+}
+.Matrix{
+  background-image: url("./assets/images/Group 2256.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1700px;
+  @include ex-desktop{
+    height: 1400px;
+  }
+  @include desktop{
+    height: 1900px;
+  }
+  @include tablet{
+    height: 3200px;
+  }
+  @include mobile{
+    height: 3100px;
+  }
+  .MuiTypography-h2{
+    @extend .black ;
+    padding-top: 200px;
+    @include ex-desktop{
+      padding-top: 70px; 
+    }
+    @include tablet{
+      padding-top: 30px;
+    }
+  }
+  .greenbottom{
+    border-bottom: 3px solid $green;
+  }
+  .MuiTypography-h5{
+    @extend .font-f-li;
+    opacity: 0.5;
+    font-size: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    @include ex-desktop{
+      margin-top: 20px;
+    margin-bottom: 20px;
+    }
+    @include tablet{
+      margin-bottom: 0px;
+    }
+
+  }
+  .MuiTypography-h3{
+      @extend .font-f-r, .black ;
+      font-size: 25px;
+      margin-top: 10px;
+  }
+  .path-img{
+    position: absolute;
+    margin-top: -13px;
+    margin-left: -13px;
+  }
+  ::marker {
+    @extend .green;
+    font-size: 25px,
+  }
+  .plamatrix{
+    li{
+      @extend .font-f-r, .black;
+      font-size: 17px;
+      @include ex-desktop{
+        font-size: 15px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+      
+    }
+  }
+  .MuiButton-containedPrimary{
+    padding: 15px 23px;
+    font-size: 14px;
+    @include ex-desktop{
+      padding: 8px 13px;
+      font-size: 11px;
+    }
+
+    
+  }
+}
+.Nos{
+  .MuiTypography-h2{
+    @extend .black ;
+    
+    @include ex-desktop{
+      padding-top: 70px; 
+    }
+    @include tablet{
+      padding-top: 30px;
+    }
+  }
+  .MuiTypography-h4{
+    @extend .black ;
+    font-size: 23px;
+  }
+  .Noscard{
+    max-width: 345px;
+    @include tablet{
+      max-width: 266px;
+    }
+
+  }
+  .noscircle{
+    position: absolute;
+    right: 270px;
+    z-index: -1;
+    margin-top: -80px;
+    @include ex-desktop{
+      display: none;
+    }
+  }
+  .noscircle2{
+    position: relative;
+    top: -104px;
+    left: -79px;
+    z-index: -1;
+    @include ex-desktop{
+      display: none;
+    }
+  }
+}
+.Liver{
+  background-image: url("./assets/images/Rectangle 48.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 601px;
+  text-align: center;
+  @include ex-desktop{
+    height: 400px;
+  }
+  .MuiTypography-h2{
+   padding-top: 160px;
+   @include desktop{
+     font-size: 40px;
+   }
+   @include ex-desktop{
+    padding-top: 100px;
+  }
+  @include mobile{
+    font-size: 30px;
+    padding-top: 20px;
+  }
+   
+  }
+  .MuiTypography-h4{
+    @include mobile{
+      font-size: 19px;
+    }
+  }
+  .Contactez-btn{
+    font-size: 14px;
+    margin-top: 25px;
+  }
+}
+.Contact{
+  background-image: url("../src/assets/images/Rectangle 91.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  padding-top: 100px;
+  padding-bottom: 100px;
+  .MuiTypography-h2{
+   @extend .black; 
+  }
+  .MuiTypography-h6{
+    @extend .font-f-m; 
+   }
+   .MuiFormControl-root{
+     background: rgba(64, 71, 72, 0.1);
+   }
+   .MuiButton-containedPrimary {
+    padding: 13px 45px;
+    font-size: 18px;
+    text-transform: capitalize;
+    @include ex-desktop{
+      padding: 8px 43px;
+    font-size: 17px;
+
+    }
+}
+.shark-contact{
+  @extend .green, .font-f-m;
+    @include desktop{
+      margin-top: 30px;
+    }
+}
+.location-img{
+  margin-top: 17px;
+  
+}
+
+.Contactez{
+  padding-top: 75px;
+    padding-bottom: 10px;
+    @include desktop{
+      padding-top: 0px;
+    }
+}
+.mention-img{
+  margin-top: 194px;
+  @include ex-desktop{
+    width: 300px;
+    height: 270px;
+  }
+  @include mobile{
+    margin-top: 44px;
+  }
+}
+.stack-contact{
+  margin-top: 30px;
+  @include mobile{
+    margin-top: 0px;
+  }
+}
+  
+}
+.footer{
+  .MuiTypography-h2{
+    @extend .green, .font-f-m;
+    margin-top: 120px;
+    @include desktop{
+      margin-top: 0px;
+    }
+   }
+   .MuiTypography-h6{
+    @extend .blue, .font-f-r;
+    opacity: 1;
+    text-transform: capitalize;
+    &:hover{
+      color: $green;
+    }
+   }
+   .footer-btn{
+     @extend .font-17,.blue;
+     text-transform: capitalize;
+     padding: 0px;
+     &:hover{
+       color: $green;
+     background-color: $white;
+      }
+   }
+   
+}
